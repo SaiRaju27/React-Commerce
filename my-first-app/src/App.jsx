@@ -1,14 +1,15 @@
-import React, { Component } from "react";
-export class NavBar extends Component {
+import React, { Component } from 'react';
+import { NavBar } from './NavBar';
+import MainContent from './MainContent';
+class App extends Component {
     render() {
         return (
             <>
-                <div class="highlight">
-                    <h1>Hello </h1>
-                    <p>hai</p>
-                </div>
+                <NavBar />
+                <MainContent />
             </>
-        )
 
+        )
     }
 }
+export default App;
