@@ -5,3 +5,7 @@
 .navbar-style {
     background-color: aqua !important;
 }
+
+.hand-icon {
+    cursor: pointer
+}
