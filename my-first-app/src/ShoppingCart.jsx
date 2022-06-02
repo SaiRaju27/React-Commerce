@@ -2,17 +2,42 @@ import React, { Component } from 'react';
 import Product from './Product';
 
 export default class ShoppingCart extends Component {
-    state = {
-        products: [
-            { id: 1, productName: "Iphone", price: 80000, quantity: 0, photo: "https://picsum.photos/id/1020/1300" },
-            { id: 2, productName: "Sony Camera", price: 5000, quantity: 0, photo: "https://picsum.photos/id/1021/1300" },
-            { id: 3, productName: "Samsung Laptop", price: 40000, quantity: 0, photo: "https://picsum.photos/id/1022/1300" },
-            { id: 4, productName: "Ipad", price: 20000, quantity: 0, photo: "https://picsum.photos/id/1023/1300" },
-            { id: 5, productName: "Dell Monitor", price: 50000, quantity: 0, photo: "https://picsum.photos/id/1024/1300" },
-            { id: 6, productName: "Reconnect", price: 10000, quantity: 0, photo: "https://picsum.photos/id/1025/1300" },
-        ],
+    //excutes when component is mounted
+    constructor() {
+        //initialization of the state
+        //console.log("Constructor method executed");
+        super();// we have to call super class contructor (Component) if we doesn' call super this keyword gigves error
+        this.state = {
+            products: [
+                { id: 1, productName: "Iphone", price: 80000, quantity: 0, photo: "https://picsum.photos/id/1020/1300" },
+                { id: 2, productName: "Sony Camera", price: 5000, quantity: 0, photo: "https://picsum.photos/id/1021/1300" },
+                { id: 3, productName: "Samsung Laptop", price: 40000, quantity: 0, photo: "https://picsum.photos/id/1022/1300" },
+                { id: 4, productName: "Ipad", price: 20000, quantity: 0, photo: "https://picsum.photos/id/1023/1300" },
+                { id: 5, productName: "Dell Monitor", price: 50000, quantity: 0, photo: "https://picsum.photos/id/1024/1300" },
+                { id: 6, productName: "Reconnect", price: 10000, quantity: 0, photo: "https://picsum.photos/id/1025/1300" },
+            ],
 
+        }
     }
+
+    // //executes after constructor and render method(inlcudes life cycle of child components if any) of current component
+    // componentDidMount() {
+    //     console.log("component did mount method executed");
+    // }
+    // //executes if there is anhy change
+    // componentDidUpdate(prevProps, prevState) {
+    //     console.log("component did update method executed", prevProps, prevState, this.props, this.state);
+    // }
+    // //to unmount the component
+    // componentWillUnmount() {
+    //     console.log("Component will unmount called")
+    // }
+
+    // //to catch errror when any incorrect code
+    // componentDidCatch(error, info) {
+    //     console.log("Component did catch")
+    //     localStorage.lastError = `${error}/${JSON.stringify(info)}`
+    // }
 
     handleIncrement = (prod, maxValue) => {
         let allProducts = [...this.state.products]
@@ -56,6 +81,7 @@ export default class ShoppingCart extends Component {
         console.log("Delete", prod);
     }
     render() {
+        console.log("render method executed");
         return (
             <>
                 <div className="container-fluid">
@@ -68,7 +94,6 @@ export default class ShoppingCart extends Component {
                             </Product>
                         })}
                     </div>
-
                 </div>
 
 
