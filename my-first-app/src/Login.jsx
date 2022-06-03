@@ -11,14 +11,17 @@ export default class Loginb extends Component {
         }
     }
 
-    handleChange = () => {
-        console.log(this.state)
-        if (this.state.email === "admin@gmail.com" && this.state.password === "admin") {
+    handleChange = async () => {
+        var response = await fetch(`http://localhost:3000/users?email=${this.state.email}&password=${this.state.password}`, { method: "GET" })
+        console.log(response)
+        var body = await response.json()
+        console.log(body)
+        // console.log(this.state)
+        if (body.length > 0) {
             this.setState({
                 message: "Successfully Logged in"
 
             })
-
         }
         else {
             this.setState({
@@ -27,6 +30,20 @@ export default class Loginb extends Component {
             })
 
         }
+        /* if (this.state.email === "admin@gmail.com" && this.state.password === "admin") {
+             this.setState({
+                 message: "Successfully Logged in"
+ 
+             })
+ 
+         }
+         else {
+             this.setState({
+                 message: "Invalid Credentials"
+ 
+             })
+ 
+         }*/
     }
     render() {
         return (

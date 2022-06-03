@@ -8,22 +8,40 @@ export default class ShoppingCart extends Component {
         //console.log("Constructor method executed");
         super();// we have to call super class contructor (Component) if we doesn' call super this keyword gigves error
         this.state = {
-            products: [
-                { id: 1, productName: "Iphone", price: 80000, quantity: 0, photo: "https://picsum.photos/id/1020/1300" },
-                { id: 2, productName: "Sony Camera", price: 5000, quantity: 0, photo: "https://picsum.photos/id/1021/1300" },
-                { id: 3, productName: "Samsung Laptop", price: 40000, quantity: 0, photo: "https://picsum.photos/id/1022/1300" },
-                { id: 4, productName: "Ipad", price: 20000, quantity: 0, photo: "https://picsum.photos/id/1023/1300" },
-                { id: 5, productName: "Dell Monitor", price: 50000, quantity: 0, photo: "https://picsum.photos/id/1024/1300" },
-                { id: 6, productName: "Reconnect", price: 10000, quantity: 0, photo: "https://picsum.photos/id/1025/1300" },
-            ],
+            products: [],
+            /* products: [
+                 { id: 1, productName: "Iphone", price: 80000, quantity: 0, photo: "https://picsum.photos/id/1020/1300" },
+                 { id: 2, productName: "Sony Camera", price: 5000, quantity: 0, photo: "https://picsum.photos/id/1021/1300" },
+                 { id: 3, productName: "Samsung Laptop", price: 40000, quantity: 0, photo: "https://picsum.photos/id/1022/1300" },
+                 { id: 4, productName: "Ipad", price: 20000, quantity: 0, photo: "https://picsum.photos/id/1023/1300" },
+                 { id: 5, productName: "Dell Monitor", price: 50000, quantity: 0, photo: "https://picsum.photos/id/1024/1300" },
+                 { id: 6, productName: "Reconnect", price: 10000, quantity: 0, photo: "https://picsum.photos/id/1025/1300" },
+             ],*/
 
         }
     }
 
     // //executes after constructor and render method(inlcudes life cycle of child components if any) of current component
-    // componentDidMount() {
-    //     console.log("component did mount method executed");
-    // }
+    componentDidMount = async () => {
+        console.log("component did mount method executed");
+        //fetch data from datasource
+        var response = await fetch("http://localhost:3000/products", { method: "GET" })
+        console.log(response);
+        var s = await response.json()
+        console.log(s)
+        this.setState({ products: s })
+        /* promise.then((response) => {
+             console.log(response)
+             var promise1 = response.json();
+             promise1.then((prods) => {
+                 this.setState({ products: prods })  we dont use to write then simple await and assign a variable
+                 console.log(prods)
+             })
+     
+     
+         }) as this is a complex things to write nested promises we use async and await conectps*/
+
+    }
     // //executes if there is anhy change
     // componentDidUpdate(prevProps, prevState) {
     //     console.log("component did update method executed", prevProps, prevState, this.props, this.state);
