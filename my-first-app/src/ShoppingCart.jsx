@@ -102,17 +102,18 @@ export default class ShoppingCart extends Component {
         console.log("render method executed");
         return (
             <>
-                <div className="container-fluid">
-                    <h1>Shopping Cart</h1>
-                    <div className="row">
-                        {this.state.products.map((prod) => {
-                            // return <Product key={prod.id} id={prod.id} productName={prod.productName} price={prod.price} quantity={prod.quantity} photo={prod.photo} onIncrement={this.handleIncrement} onDecrement={this.handleDecrement}>
-                            return <Product key={prod.id} prods={prod} onIncrement={this.handleIncrement} onDecrement={this.handleDecrement} onDelete={this.handleDelete}>
-                                <button className="btn btn-primary">Buy Product</button>
-                            </Product>
-                        })}
-                    </div>
+
+                <h1>Shopping Cart</h1>
+                <div className="container grid grid-three-column portofolio-images">
+                    {this.state.products.map((prod) => {
+                        return <Product key={prod.id} prods={prod} onIncrement={this.handleIncrement} onDecrement={this.handleDecrement} onDelete={this.handleDelete}>
+                            {/* return <Product key={prod.id} id={prod.id} productName={prod.productName} price={prod.price} quantity={prod.quantity} photo={prod.photo} onIncrement={this.handleIncrement} onDecrement={this.handleDecrement}> */}
+
+                            <button className="btn btn-primary">Buy Product</button>
+                        </Product>
+                    })}
                 </div>
+
 
 
             </>

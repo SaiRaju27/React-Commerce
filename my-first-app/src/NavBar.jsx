@@ -1,41 +1,32 @@
 import React, { Component } from "react";
 import "./index.css";
+import pic from './logo.jpg';
 import { Link } from 'react-router-dom';
 export class NavBar extends Component {
     render() {
         return (
             <>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-style">
-                    <div className="container-fluid">
-                        <a className="navbar-brand" href="/#">E-Commerce</a>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="/#">Home</a>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to="/" className="nav-link" >Login</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to="/dashboard" className="nav-link" >DashBoard</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to="/cart" className="nav-link" >Shopping Cart</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to="/customers" className="nav-link" >Customers List</Link>
-                                </li>
-                            </ul>
-                            <form className="d-flex">
-                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-success" type="submit">Search</button>
-                            </form>
-                        </div>
-                    </div>
-                </nav>
+                <header className="header">
+                    <img src={pic} alt="main pic" className="logo" />
+                    <nav className="navbar">
+                        <ul className="navbar-lists">
+                            <li>
+                                <Link to="/" className="navbar-link home-link" >Login</Link>
+                            </li>
+                            <li>
+                                <Link to="/dashboard" className="navbar-link about-link" >DashBoard</Link>
+                            </li>
+                            <li>
+                                <Link to="/cart" className="navbar-link services-link" >Shopping Cart</Link>
+                            </li>
+                            <li>
+                                <Link to="/customers" className="navbar-link portofolio-link" >Customers List</Link>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </header>
+
 
             </>
         )
