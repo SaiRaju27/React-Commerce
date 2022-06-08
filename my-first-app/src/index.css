@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Work+Sans:wght@400;500&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Work+Sans:wght@400;500&display=swap');*/
 
 
 
@@ -7,9 +7,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*font-family: 'Poppins', sans-serif;*/
+    font-family: 'Poppins', sans-serif;
     font-family: 'Work Sans', sans-serif;
-
+    font-size: 25px
 }
 
 /*if anything is repitative the we use root so that if we change once entire application colors aor whatever will be changed*/
@@ -39,12 +39,12 @@ html {
     font-size: 62.5%;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4 {
     font-family: 'Poppins', sans-serif;
-}
+} */
 
 h1 {
     color: var(--heading);
@@ -194,3 +194,60 @@ Resuable section code
 
     border-radius: 5px;
 }
+
+/*form styles login*/
+/* body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--helper);
+    height: 100vh;
+} */
+#login {
+    justify-content: center;
+    align-items: center
+}
+
+#login .container #login-row #login-column #login-box {
+    margin-top: 120px;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #9C9C9C;
+    background-color: hsl(0, 0%, 92%);
+
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+}
+
+
+
+
+.col-lg-4 {
+    color: var(--helper);
+    font-size: 20px
+}
+
+.form-control {
+    height: 30px
+}
+
+.form-group {
+    margin-top: 25px
+}
+
+.table {
+    margin-top: 30px
+}
+
+.ss {
+    border-radius: 13px
+}
+
+
+
+/*card styles*/

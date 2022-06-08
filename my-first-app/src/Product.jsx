@@ -26,14 +26,14 @@ export default class Product extends Component {
         return (
             <>
 
-                <div className=" text-muted" style={{ width: '18rem' }}>#{this.state.products.id}
+                <div className="card text-muted" style={{ width: '25rem' }}>#{this.state.products.id}
                     <span className="pull-right hand-icon" onClick={() => { this.props.onDelete(this.state.products) }}>
                         Delete <i className="fa fa-times"></i>
                     </span>
 
 
                     <div className="img-overlay p-btn--1">
-                        <img src={this.state.products.photo} className="card" alt="..." width="350px" height="250px" />
+                        <img src={this.state.products.photo} className="ss" alt="..." width="250px" height="250px" />
                         <div className="overlay">
                             <a href="/#" class="common-heading">Project 1</a>
 
@@ -50,13 +50,11 @@ export default class Product extends Component {
                         <div className="float-left">
                             <div className="btn-group">
                                 <button className="btn p-btn" onClick={() => { this.props.onIncrement(this.state.products, 5) }}>+</button>
-                                {' '}
-                                {' '}
+                                &nbsp;
                                 <button className="btn p-btn" onClick={() => { this.props.onDecrement(this.state.products, 0) }}>-</button>
                             </div>
                         </div>
-                        {' '}
-                        {' '}
+                        &nbsp;
                         <div className="float-right">{this.props.children}</div>
                     </div>
                 </div>

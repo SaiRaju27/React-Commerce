@@ -49,7 +49,7 @@ export default class CustomerList extends Component {
                     <tr key={customer.id}>
                         <td>{customer.id}</td>
                         <td><img src={customer.photo} alt="pic" />
-                            <div> <button className="btn btn-sm btn-secondary" onClick={() => {
+                            <div> <button className="btn kk" onClick={() => {
                                 this.changePicture(customer, index)
                             }}>Change Picture</button></div>
                         </td>
@@ -71,21 +71,25 @@ export default class CustomerList extends Component {
                     <span className="badge bg-secondary m-2">{this.state.customersCount}</span>
                 </h4>
                 <button className="btn btn-success" onClick={this.onRefresh}>Refresh</button> */}
+                <div className="col-lg">
+                    <h1 className="m-2 p-2 border-bottom">Customers List</h1>
 
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Brand</th>
-                            <th>Brand Image</th>
-                            <th>Price</th>
-                            <th>Platform</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {row_names}
-                    </tbody>
-                </table>
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Brand</th>
+                                <th>Brand Image</th>
+                                <th>Price</th>
+                                <th>Platform</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {row_names}
+                        </tbody>
+                    </table>
+                </div>
+
             </>
         )
     }

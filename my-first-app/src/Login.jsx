@@ -48,32 +48,42 @@ export default class Loginb extends Component {
     render() {
         return (
             <>
-                <div className="col-lg-9">
-                    <h1 className="m-2 p-2 border-bottom">Login Component</h1>
+                <div id="login">
+                    <div className="col-g">
+                        <h1 className="m-2 p-2 border-bottom">Login Component</h1>
+                        <div className="container">
+                            <div id="login-row" className="row justify-content-center align-items-center">
+                                <div id="login-column" className="col-md-6">
+                                    <div id="login-box" className="col-md-12">
 
-                    {/* Email starts */}
-                    <div className="form-group form-row">
-                        <label className="col-lg-4">Email:</label>
-                        <input type="email" className="form-control" value={this.state.email}
-                            onChange={(event) => {
-                                this.setState({ email: event.target.value });
-                                //console.log(this.state.email)
-                            }}></input>
-                    </div>
-                    {/* Email ends */}
+                                        {/* Email starts */}
+                                        <div className="form-group form-row">
+                                            <label className="col-lg-4">Email:</label>
+                                            <input type="email" className="form-control" value={this.state.email}
+                                                onChange={(event) => {
+                                                    this.setState({ email: event.target.value });
+                                                    //console.log(this.state.email)
+                                                }}></input>
+                                        </div>
+                                        {/* Email ends */}
 
-                    {/* Password starts */}
-                    <div className="form-group form-row">
-                        <label className="col-lg-4">Password:</label>
-                        <input type="password" className="form-control" value={this.state.password} onChange={(event) => {
-                            this.setState({ password: event.target.value });
-                            //console.log(this.state.password)
-                        }}></input>
-                    </div>
-                    {/* Password ends */}
-                    <div className="text-right">
-                        {this.state.message}
-                        <button className="btn btn-primary" onClick={this.handleChange}>Login</button>
+                                        {/* Password starts */}
+                                        <div className="form-group form-row">
+                                            <label className="col-lg-4">Password:</label>
+                                            <input type="password" className="form-control" value={this.state.password} onChange={(event) => {
+                                                this.setState({ password: event.target.value });
+                                                //console.log(this.state.password)
+                                            }}></input>
+                                        </div>
+                                        {/* Password ends */}
+                                        <div className="text-right">
+                                            {this.state.message}
+                                            <button className="btn btn-primary" onClick={this.handleChange}>Login</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </>
